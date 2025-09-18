@@ -3,5 +3,5 @@
 Deploy:
 
 ```bash
-kubectl create deployment log-output --image=ismomehdi/log-output
+kubectl apply -f manifests/deployment.yaml
 ```
