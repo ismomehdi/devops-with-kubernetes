@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
+import express from 'express'
 
-const outputRandomString = () => {
+const app = express()
+const PORT = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
   const randomString = uuidv4()
-  console.log(`${new Date()}: ${randomString}`)
+  res.send(`${new Date()}: ${randomString}`)
+})
 
-  setInterval(() => {
-    console.log(`${new Date()}: ${randomString}`)
-  }, 5000);
-}
-
-outputRandomString()
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+})

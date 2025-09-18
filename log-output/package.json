@@ -7,9 +7,10 @@
   "type": "module",
   "main": "app.js",
   "devDependencies": {
-    "typescript": "^5.9.2"
+    "typescript": "5.9.2"
   },
   "dependencies": {
-    "uuid": "^13.0.0"
+    "express": "5.1.0",
+    "uuid": "13.0.0"
   }
 }
