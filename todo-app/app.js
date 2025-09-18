@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import fs from 'node:fs';
 
-const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
 const port = process.env.PORT;
 
 const server = createServer((req, res) => {

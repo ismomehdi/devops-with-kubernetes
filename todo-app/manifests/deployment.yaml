@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: ismomehdi/todo-app:4
+          image: ismomehdi/todo-app:5
           env:
             - name: PORT
               value: "3000"
