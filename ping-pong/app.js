@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000
 
 let pong = 0
 
-app.get('/', (req, res) => {
+app.get('/pingpong', (req, res) => {
   res.send(`pong ${pong}`)
   pong++
 })

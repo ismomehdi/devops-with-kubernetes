@@ -1,4 +1,4 @@
-# Todo App
+# Ping-pong App
 
 Deploy:
 
@@ -12,4 +12,4 @@ Set up shared ingress:
 cd .. && kubectl apply -f ingress.yaml
 ```
 
-App runs in: `http://localhost:8081/todos`
+App runs in: `http://localhost:8081/pingpong`

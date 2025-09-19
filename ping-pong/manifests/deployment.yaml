@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: ping-pong
-          image: ismomehdi/ping-pong
+          image: ismomehdi/ping-pong:1
