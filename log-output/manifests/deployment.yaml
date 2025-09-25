@@ -12,6 +12,17 @@ spec:
       labels:
         app: log-output
     spec:
+      volumes:
+        - name: shared-output
+          emptyDir: {}
       containers:
         - name: log-output
-          image: ismomehdi/log-output:1
+          image: ismomehdi/log-output:4
+          volumeMounts:
+          - name: shared-output
+            mountPath: /usr/src/app/files
+        - name: string-generator
+          image: ismomehdi/string-generator:1
+          volumeMounts:
+          - name: shared-output
+            mountPath: /usr/src/app/files

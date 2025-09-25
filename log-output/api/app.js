@@ -1,12 +1,15 @@
-import { v4 as uuidv4 } from 'uuid';
 import express from 'express'
+import fs from 'node:fs';
 
 const app = express()
 const PORT = process.env.PORT || 3000
+const outputFilePath = '/usr/src/app/files/output.txt';
 
 app.get('/', (req, res) => {
-  const randomString = uuidv4()
-  res.send(`${new Date()}: ${randomString}`)
+  fs.readFile(outputFilePath, (err, data) => {
+    if (err) throw err;
+    res.send(data.toString());
+  });
 })
 
 app.listen(PORT, () => {

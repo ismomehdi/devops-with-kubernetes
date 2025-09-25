@@ -15,3 +15,4 @@ Submissions for the University of Helsinki [DevOps with Kubernetes](https://cour
 - [1.7](https://github.com/ismomehdi/devops-with-kubernetes/tree/1.7/log-output)
 - [1.8](https://github.com/ismomehdi/devops-with-kubernetes/tree/1.8/todo-app)
 - [1.9](https://github.com/ismomehdi/devops-with-kubernetes/tree/1.9/ping-pong)
+- [1.10](https://github.com/ismomehdi/devops-with-kubernetes/tree/1.10/log-output)
