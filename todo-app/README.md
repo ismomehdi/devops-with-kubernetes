@@ -6,10 +6,22 @@ Deploy:
 kubectl apply -f manifests
 ```
 
-Set up shared ingress:
+### Ingress & persistent volume
+
+(You can skip these steps if already done.)
+
+Create a directory for persistent volume:
 
 ```bash
-cd .. && kubectl apply -f ingress.yaml
+docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube && chown 1000:1000 /tmp/kube
 ```
+
+Set up shared ingress & persistent volume:
+
+```bash
+cd .. && kubectl apply -f manifests
+```
+
+### Run
 
 App runs in: `http://localhost:8081/todos`

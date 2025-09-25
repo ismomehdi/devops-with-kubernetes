@@ -12,6 +12,13 @@ spec:
       labels:
         app: ping-pong
     spec:
+      volumes:
+        - name: shared-output
+          persistentVolumeClaim:
+            claimName: pv-claim
       containers:
         - name: ping-pong
-          image: ismomehdi/ping-pong:1
+          image: ismomehdi/ping-pong:3
+          volumeMounts:
+          - name: shared-output
+            mountPath: /usr/src/app/files
