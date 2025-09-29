@@ -14,7 +14,13 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: ismomehdi/todo-app:5
+          image: ismomehdi/todo-app:8
           env:
             - name: PORT
               value: "3000"
+          volumeMounts:
+            - name: image-cache
+              mountPath: /usr/src/app/files
+      volumes:
+        - name: image-cache
+          emptyDir: {}

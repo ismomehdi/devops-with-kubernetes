@@ -13,7 +13,13 @@ kubectl apply -f manifests
 Create a directory for persistent volume:
 
 ```bash
-docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube && chown 1000:1000 /tmp/kube
+docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube
+```
+
+Set permissions:
+
+```bash
+docker exec k3d-k3s-default-agent-0 chown 1000:1000 /tmp/kube
 ```
 
 Set up shared ingress & persistent volume:
