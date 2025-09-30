@@ -7,15 +7,57 @@
   <body>
     <h1>The Project App</h1>
     <img src="cached-image" style="max-width: 100%; height: auto;" />
-    <form style="display: flex; flex-direction: row; gap: 8px; margin-top: 16px;">
-      <input style="width: 140px;" type="text" maxlength="140" />
-      <button>Create todo</button>
+    <form id="todo-form" style="display: flex; flex-direction: row; gap: 8px; margin-top: 16px;">
+      <input id="todo-input" style="width: 140px;" type="text" maxlength="140" />
+      <button type="submit">Create todo</button>
     </form>
-    <ul>
-      <li>Learn JavaScript</li>
-      <li>Learn React</li>
-      <li>Build a project</li>
-    </ul>
+    <ul id="todo-list"></ul>
     <p>DevOps with Kubernetes 2025</p>
+    <script>
+      const todoList = document.getElementById('todo-list')
+      const todoForm = document.getElementById('todo-form')
+      const todoInput = document.getElementById('todo-input')
+
+      function renderTodos(todos) {
+        todoList.innerHTML = ''
+        todos.forEach((todo) => {
+          const item = document.createElement('li')
+          item.textContent = todo.text
+          todoList.appendChild(item)
+        })
+      }
+
+      async function fetchTodos() {
+        try {
+          const response = await fetch('/todos')
+          if (!response.ok) throw new Error('Failed to load todos')
+          const todos = await response.json()
+          renderTodos(todos)
+        } catch (error) {
+          console.error('Error fetching todos', error)
+        }
+      }
+
+      todoForm.addEventListener('submit', async (event) => {
+        event.preventDefault()
+        const text = todoInput.value.trim()
+        if (!text) return
+
+        try {
+          const response = await fetch('/todos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text }),
+          })
+          if (!response.ok) throw new Error('Failed to create todo')
+          todoInput.value = ''
+          await fetchTodos()
+        } catch (error) {
+          console.error('Error creating todo', error)
+        }
+      })
+
+      fetchTodos()
+    </script>
   </body>
 </html>

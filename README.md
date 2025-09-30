@@ -24,3 +24,4 @@ Submissions for the University of Helsinki [DevOps with Kubernetes](https://cour
 ### Chapter 3
 
 - [2.1](https://github.com/ismomehdi/devops-with-kubernetes/tree/2.1)
+- [2.2](https://github.com/ismomehdi/devops-with-kubernetes/tree/2.2/todo-app)

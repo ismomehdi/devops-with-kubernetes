@@ -34,7 +34,7 @@ spec:
             name: todo-backend-svc
             port:
               number: 2345
-      - path: /html
+      - path: /todo-app
         pathType: Prefix
         backend:
           service:

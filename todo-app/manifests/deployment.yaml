@@ -18,7 +18,7 @@ spec:
             claimName: pv-claim
       containers:
         - name: todo-app
-          image: ismomehdi/todo-app:12
+          image: ismomehdi/todo-app:15
           env:
             - name: PORT
               value: "3000"
@@ -26,7 +26,7 @@ spec:
             - name: image-cache
               mountPath: /usr/src/app/files
         - name: todo-backend
-          image: ismomehdi/todo-backend:1
+          image: ismomehdi/todo-backend:3
           env:
             - name: PORT
-              value: "3000"
+              value: "3001"
