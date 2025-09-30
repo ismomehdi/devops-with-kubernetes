@@ -20,6 +20,13 @@ spec:
             name: ping-pong-svc
             port:
               number: 2345
+      - path: /pings
+        pathType: Prefix
+        backend:
+          service:
+            name: ping-pong-svc
+            port:
+              number: 2345
       - path: /todos
         pathType: Prefix
         backend:

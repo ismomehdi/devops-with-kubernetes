@@ -12,6 +12,10 @@ app.get('/pingpong', (req, res) => {
   res.send(`pong ${getCurrentValue()}`)
 })
 
+app.get('/pings', (req, res) => {
+  res.send(`${getCurrentValue()}`)
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   writeFile();

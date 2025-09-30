@@ -18,7 +18,7 @@ spec:
             claimName: pv-claim
       containers:
         - name: log-output
-          image: ismomehdi/log-output:5
+          image: ismomehdi/log-output:8
           volumeMounts:
           - name: shared-output
             mountPath: /usr/src/app/files

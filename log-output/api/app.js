@@ -5,7 +5,6 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 const outputFilePath = '/usr/src/app/files/output.txt';
-const pingPongFilePath = '/usr/src/app/files/ping-pong.txt';
 
 app.get('/', (req, res) => {
   fs.readFile(outputFilePath, async (err, data) => {
@@ -20,12 +19,8 @@ app.listen(PORT, () => {
 })
 
 const getPingPongValue = async () => {
-  const data = fs.readFileSync(pingPongFilePath, 'utf-8', (err, data) => {
-    if (err) return '0';
-    return data;
-  });
-
-  const currentValue = parseInt(data);
+  const response = await fetch('http://ping-pong-svc:2345/pings');
+  const currentValue = parseInt(await response.text());
   return currentValue;
 }
 
