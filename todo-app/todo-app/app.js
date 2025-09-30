@@ -14,7 +14,7 @@ const IMAGE_URL = 'https://picsum.photos/1200'
 
 app.listen(PORT, '0.0.0.0', () => console.log(`Server is running on port ${PORT}`))
 
-app.get('/todos', (_req, res) => res.sendFile('index.html', { root: process.cwd() }))
+app.get('/html', (_req, res) => res.sendFile('index.html', { root: process.cwd() }))
 
 app.get('/cached-image', async (_req, res) => {
   try {

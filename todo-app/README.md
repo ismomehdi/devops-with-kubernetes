@@ -30,4 +30,4 @@ cd .. && kubectl apply -f manifests
 
 ### Run
 
-App runs in: `http://localhost:8081/todos`
+App runs in: `http://localhost:8081/html`
